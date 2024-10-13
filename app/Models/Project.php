@@ -18,7 +18,8 @@ class Project extends Model
         'stack',
         'status',
         'image_path',
-        'slug'
+        'slug',
+        'type_id'
     ];
 
     public static function generateSlug($name) {
