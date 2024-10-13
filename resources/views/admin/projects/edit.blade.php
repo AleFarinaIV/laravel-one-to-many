@@ -94,7 +94,7 @@
                                 <select name="type_id" id="type_id" class="form-select" required>
                                     <option value="">-- Select a type --</option>
                                     @foreach($types as $type)
-                                        <option value="{{ $type->id }}" @selected($type->id == old('type_id'))>
+                                        <option value="{{ $type->id }}" @selected($type->id == old('type_id', $project->type ? $project->type->id : ''))>
                                             {{ $type->name }}
                                         </option>
                                     @endforeach
