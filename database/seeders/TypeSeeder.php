@@ -16,15 +16,20 @@ class TypeSeeder extends Seeder
     public function run()
     {
         $types = [
-            ['name' => 'Web Development'],
-            ['name' => 'Mobile Development'],
-            ['name' => 'Data Science'],
-            ['name' => 'AI & Machine Learning'],
-            ['name' => 'DevOps']
+            'Frontend',
+            'Backend',
+            'Database',
+            'DevOps',
+            'Fullstack'
         ];
 
         foreach ($types as $type) {
-            Type::create($type);
+            $new_type = new Type();
+
+            $new_type->name = $type;
+            $new_type->slug = Type::generateSlug($type);
+
+            $new_type->save();
         }
     }
 }
